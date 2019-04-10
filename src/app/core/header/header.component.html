@@ -1,0 +1,42 @@
+<div class="fixed-header container-fluid fixed-top">
+
+   <div class="align-nav-icons">
+      <span class="">
+          <a title="Profile" class="ref-anim">
+            <i class="fas fa-user"></i>
+          </a>
+        </span>
+        <span class="" (click)="logout()">
+          <a class="ref-anim" title="Logout">
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+        </span>
+
+        <span class="" (click)="refresh()">
+            <a  class="ref-anim" title="Sync" >
+              <i class="fa fa-refresh" aria-hidden="true" id="ref-anim-ico"></i>
+            </a>
+          </span>
+  </div>
+
+  <nav class="navbar navbar-expand-md navbar-dark" style="width:95%;">
+        <a href="" [routerLink]="['/dashboard']" class="navbar-brand"> <img class="float-left" src="../../../assets/images/pr-logo.svg"></a>
+
+      <button class="navbar-toggler align-exp-btn" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+          <form class="mx-auto" [formGroup]="searchForm" (ngSubmit)="search(searchForm.value.searchText)">
+              <div class="input-group" style="margin-right:150px; margin-top:5px;">
+                <input type="search" class="form-control search-cust" formControlName="searchText" placeholder="Search for accounts..." aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn search-cust"><i class="fas fa-search"></i></button>
+                </div>
+              </div>
+          </form>
+        </div>
+  </nav>
+
+</div>

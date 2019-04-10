@@ -1,1 +1,205 @@
 /* You can add global styles to this file, and also import other style files */
+@import './src/assets/variables.scss';
+
+@media print {
+  .no-print, .no-print * {
+      display: none !important;
+  }
+
+}
+a:link {
+  color: navy;
+}
+.link:hover {
+  color: #008CBA;
+}
+/* visited link */
+a:visited {
+  color: green;
+}
+.mobDisplay {
+	display:none;
+}
+.deskDisplay {
+	display:none;
+}
+.alert-success{
+  background-color:lightgreen;
+}
+body .ui-table .ui-table-tbody > tr:nth-child(even){
+  background-color: #EEFFEE
+}
+.summaryImg{
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 30px;
+  width: 30px;
+}
+.dataBlack{
+  color: #6772E5
+}
+.dataRed{
+  color: red
+}
+.dataGreen{
+  color: green
+}
+.dataAmber{
+  color: orange
+}
+
+/* Remove padding */
+@media (max-width: 767px) {
+  .no-padding-mobile{
+      padding: 0 !important;
+  }
+}
+@media (min-width:551px) {
+  .deskDisplay {
+      color: $text-color-purple;
+      display:block;
+      font-weight: bold;
+      background-color: $text-bg-purple;
+      padding: 5px;
+  }
+}
+
+@media (max-width:550px) {
+    .mobDisplay {
+        color: $text-color-purple;
+        display:block;
+        font-weight: bold;
+        background-color: $text-bg-purple;
+        padding: 5px;
+
+    }
+  }
+.btn-purple{
+  background-color:$purple !important;
+  color: $white;
+  width: 100%;
+}
+
+
+/* mouse over link */
+a:hover {
+  color: orange;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+.selectable{
+  cursor: pointer;
+}
+.ui-autocomplete{
+  width: 100%
+}
+body .ui-autocomplete .ui-autocomplete-input {
+  width: 100%
+}
+.btn-primary{
+  background-color:$purple;
+  border-color: $purple;
+  &:hover,&:focus,&:active,&:not(:disabled):not(.disabled):active{
+    background-color:#7870b5;
+    border-color: #7870b5;
+  }
+}
+
+.card {
+  padding: 1.25rem; }
+
+  .vehicle-details {
+    margin-bottom: 30px; }
+    .vehicle-details .card-header {
+      padding: 0.8rem;
+      padding-bottom: 0px;
+      border-bottom: 0px; }
+      .vehicle-details .card-header label {
+        font-size: 0.75rem;
+        margin-bottom: 2px; }
+      .vehicle-details .card-header h5 {
+        font-size: 1.15rem;
+        color: #1989CB;
+        font-weight: 500; }
+    .vehicle-details .card-body {
+      padding: 0.8rem; }
+      .vehicle-details .card-body table {
+        width: 100%;
+        margin-bottom: 0px; }
+        .vehicle-details .card-body table th {
+          font-size: 0.8rem;
+          font-weight: normal;
+          color: #6F6F6F;
+          padding: 0.2rem 0;
+          border-top: 1px solid #D0D0D0;
+          border-bottom: 1px solid #D0D0D0; }
+        .vehicle-details .card-body table td {
+          color: #6F6F6F;
+          font-size: 1rem;
+          font-weight: 300;
+          padding: 0.6rem 0;
+          border-bottom: 1px solid #D0D0D0; }
+          .vehicle-details .card-body table td .status {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center; }
+            .vehicle-details .card-body table td .status.green {
+              background-color: #65B904; }
+            .vehicle-details .card-body table td .status.orange {
+              background-color: #D58707; }
+            .vehicle-details .card-body table td .status.red {
+              background-color: #E35050; }
+        .vehicle-details .card-body table th:nth-child(2), .vehicle-details .card-body table th:nth-child(3), .vehicle-details .card-body table td:nth-child(2), .vehicle-details .card-body table td:nth-child(3) {
+          text-align: center; }
+      .vehicle-details .card-body a {
+        font-size: 0.7rem;
+        font-weight: 400;
+        color: #016FFF;
+        text-decoration: underline;
+        text-align: right;
+        display: block;
+        margin: 10px 0; }
+
+  .table-data .card-body {
+    padding: 0px; }
+    .table-data .card-body table {
+      width: 100%; }
+      .table-data .card-body table tr:nth-child(1) {
+        background-color: rgba(0, 0, 0, 0) !important; }
+      .table-data .card-body table tr:nth-child(odd) {
+        background-color: #f6f6f6; }
+      .table-data .card-body table th {
+        font-weight: normal;
+        color: #989898;
+        border-top: 0px;
+        font-size: 0.95rem;
+        padding: 0.6rem 0.75rem; }
+      .table-data .card-body table td {
+        font-weight: 400;
+        font-size: 0.95rem;
+        color: #575757; }
+        .table-data .card-body table td.status {
+          color: #7E7E7E; }
+          .table-data .card-body table td.status.green {
+            color: #65B904; }
+          .table-data .card-body table td.status.red {
+            color: #E35050; }
+
+            @media screen and (max-width: 40em) {
+              .ui-table-responsive .ui-table-tbody>tr>td {
+                  display: inline-block!important;
+                  float: none;
+                  clear: none;
+                  width: 50%!important;
+                  vertical-align: top;
+              }
+              }
+
+              .ui-table table {
+                  table-layout: auto;
+              }

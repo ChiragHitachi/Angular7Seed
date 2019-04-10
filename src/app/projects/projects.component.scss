@@ -1,0 +1,32 @@
+@import '../../assets/variables.scss';
+
+.mobDisplay {
+	display:none;
+}
+
+.search-resource {
+    margin:10px 5px 0 0;
+    position: absolute;
+    right: 20px;
+}
+
+.width-auto {
+    width: auto;
+    padding: 5px;
+}
+
+@media (max-width:767px) {
+    .mobDisplay {
+        color: $text-color-purple;
+        display:block;
+        font-weight: bold;
+        background-color: $text-bg-purple;
+        padding: 5px;
+        text-align: left;
+    }
+
+    .width-auto {
+        width: 100%;
+    }
+  }
+  

@@ -1,0 +1,34 @@
+@import '../../../assets/variables';
+.crumb-header {
+  background-color:$text-bg-purple;
+  text-align: center;
+  color: $text-color-purple;
+}
+
+.crumb{
+  font-size: 25px;
+  color: $text-color-purple;
+  // padding: 0.5%;
+  padding: 10px 16px;
+  text-align: left;
+}
+.crumbDetail{
+  font-size: 15px;
+
+  color: #6772E5;
+  text-align: left;
+
+  margin-top: 5px;
+}
+
+.breadcrumb{
+  background-color: $text-bg-purple;
+  padding-top: 0px;
+  border-radius: 0;
+}
+
+@media (max-width : 767px){
+.crumb{
+  padding: 5px 16px 0px 16px;
+}
+}

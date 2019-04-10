@@ -1,0 +1,98 @@
+@import '../../assets/variables.scss';
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.main-head{
+  height: 150px;
+  background: #FFF;
+
+}
+button i {
+  animation: rotate 3s ease-in-out 0s;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.sidenav {
+  height: 100%;
+  background-color: $purple;
+  overflow-x: hidden;
+  padding-top: 20px;
+
+  .login-main-text {
+    margin-top: 20%;
+    padding: 60px;
+    color: $white;
+    h2 {
+      font-weight: 400;
+    }
+  }
+}
+
+.main {
+  padding: 0px 10px;
+}
+
+.logo {
+  img {
+      margin-top: 20px;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+  .login-form{
+      margin-top: 10%;
+  }
+
+  .register-form{
+      margin-top: 10%;
+  }
+
+}
+
+@media screen and (min-width: 768px){
+  .main{
+      margin-left: 40%;
+  }
+
+  .sidenav{
+      width: 40%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+  }
+  .logo {
+    img {
+        width: auto;
+        /* margin-left: 70%; */
+    }
+}
+  .login-form{
+      margin-top: 40%;
+  }
+
+  .register-form{
+      margin-top: 20%;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .sidenav {
+    .login-main-text {
+      margin-top: 0;
+      padding: 10px 20px 20px 30px;
+    }
+  }
+}
+
+

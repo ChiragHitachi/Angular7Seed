@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row crumb-header " *ngIf="title">
+    <div class="crumb col-md-3">
+      {{title}}
+    </div>
+    <div class="col-md-9 crumbDetail" >
+      <div style="float:right;margin-right: 5px;" *ngIf="hasAccount"><span style="font-weight: bold;">Account:</span>{{accountName}}</div>
+      <br />
+      <div style="float:right;margin-right: 5px;" *ngIf="hasProject"><span style="font-weight: bold;">Project:</span>{{projectName}}</div>
+    </div>
+  </div>
+
+    <nav aria-label="breadcrumb">
+      <ol class="row breadcrumb">
+        <li class="selectable link" *ngFor="let item of crumbs; let i = index" [ngClass]="i < crumbs.length - 1 ?'breadcrumb-item' : 'breadcrumb-item active'"
+          (click)="moveToRoute(i, item)" aria-current="page">{{item.path}}</li>
+      </ol>
+    </nav>
+</div>

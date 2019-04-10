@@ -1,0 +1,60 @@
+@import '../../assets/variables.scss';
+
+.dash-top-bar {
+  background-color: $white;
+  -webkit-box-shadow: 0px 0px 20px 3px rgba(67, 67, 67, 0.2);
+  -moz-box-shadow: 0px 0px 20px 3px rgba(67, 67, 67, 0.2);
+  box-shadow: 0px 0px 20px 3px rgba(67, 67, 67, 0.2);
+  
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    padding: 20px 10px 5px 20px;
+    margin-right: 5px;
+
+    .selcls {
+      color: $text-color-purple;
+      border: solid 1px #517B97;
+      background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #CAD9E3), to(#FFFFFF));
+      background: -moz-linear-gradient(top, #FFFFFF, #CAD9E3 1px, #FFFFFF 25px);
+      box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+      -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+      -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+      outline: 0;
+      padding: 5px 10px 10px 10px;
+    }
+  }
+}
+
+.header {
+    background-color: lightskyblue;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+  }
+  .header >span {
+    border-left: solid 1px white;
+  }
+
+  .counter{
+    font-size: 25px;
+    color: white;
+    padding: 0.5%;
+  }
+  .counter > div {
+    font-size: 15px;
+  }
+  .spanborder {
+    border-bottom: solid 1px yellow;
+  }
+  .dropdown{
+    .btn-primary{
+      background: #e8eafb;
+      color: #6772e5;
+      border-color: transparent;
+      font-weight: bold;
+      &:focus{box-shadow:none;}
+    }
+
+  }

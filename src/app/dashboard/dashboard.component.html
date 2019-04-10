@@ -1,0 +1,22 @@
+<div class="">
+  <form [formGroup]="dashboardForm" novalidate>
+    <div class="dash-top-bar">
+      <div class="row dropdown">
+        <select class='form-control selcls' name="optionSelected" formControlName="selectedEntity"
+          (change)="onSelectedValue($event.target.value)">
+          <option value="">Please Select {{loginUserType}}</option>
+          <option class='option' *ngFor='let option of entityList' [value]="option.entityId">{{option.entityValue}}
+          </option>
+        </select>
+      </div>
+      <button class="btn btn-primary" [routerLink]="['/bu-summary']">Show All BU</button>
+     
+      <div class="col-md-2 counter">
+        
+      </div>
+
+    </div>
+   
+  </form>
+
+</div>

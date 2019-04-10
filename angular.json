@@ -27,12 +27,44 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/primeicons/primeicons.css",
+              "./node_modules/primeng/resources/themes/nova-light/theme.css",
+              "./node_modules/primeng/resources/primeng.min.css",
+              "./node_modules/font-awesome/css/font-awesome.css",
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./node_modules/chart.js/dist/chart.js",
+              "./node_modules/jquery/dist/jquery.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
+            "qa": {
+              "fileReplacements": [
+                  {
+                      "replace": "src/environments/environment.ts",
+                      "with": "src/environments/environment.qa.ts"
+                  }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }]
+          },
             "production": {
               "fileReplacements": [
                 {
@@ -67,6 +99,9 @@
           "configurations": {
             "production": {
               "browserTarget": "EAG-Portal-V2:build:production"
+            },
+            "qa": {
+              "browserTarget": "EAG-Portal-V2:build:qa"
             }
           }
         },
@@ -121,6 +156,9 @@
           "configurations": {
             "production": {
               "devServerTarget": "EAG-Portal-V2:serve:production"
+            },
+            "qa": {
+              "devServerTarget": "EAG-Portal-V2:serve:qa"
             }
           }
         },
