@@ -1,0 +1,146 @@
+
+<div class="container-fluid">
+  <div>
+    <eag-bread-crumb [title]="title"></eag-bread-crumb>
+  </div>
+  <form [formGroup]="reconciliationForm">
+
+    <div formArrayName="items" class="flex-container" *ngIf="reconciliationInfo && reconciliationInfo.length > 0;">
+      <div class="table-responsive">
+        <!-- <div> -->
+        <p-table [responsive]="true" [columns]="cols" expandableRows="true" dataKey="projectID" [value]="reconciliationInfo">
+          <ng-template pTemplate="header" let-columns>
+            <tr>
+              <th style="width: 3em"></th>
+              <th *ngFor="let col of columns">
+                {{col.header}}
+              </th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex" let-columns="columns">
+            <tr [formGroupName]="rowIndex">
+              <td>
+                <a href="#" [pRowToggler]="rowData">
+                  <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+                </a>
+              </td>
+              <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+              </td>
+            </tr>
+          </ng-template>
+          <ng-template let-i="rowIndex" let-columns="columns" let-rowData pTemplate="rowexpansion">
+            <!-- <div *ngFor="let table of reconciliationForm.get('items').controls; let ind = index"> -->
+            <tr class="container-fluid">
+              <td [attr.colspan]="columns.length + 1">
+                <div [formGroupName]="i">
+                  <div class="row">
+
+                    <div class="col-md-3">
+                      <label>Start Date:</label>
+                      <span *ngIf="source=='BRC'">
+                        <input readonly type="date" name="projAllocationDate" class="form-control"
+                               formControlName="projAllocationDate">
+                      </span>
+                      <span *ngIf="source=='PR'">
+                        <input type="date" name="projAllocationDate" class="form-control"
+                               formControlName="projAllocationDate">
+                      </span>
+                    </div>
+                    <div class="col-md-3">
+                      <label>End Date:</label>
+                      <span *ngIf="source=='BRC'">
+                        <input type="date" readonly name="projReleaseDate" class="form-control"
+                               formControlName="projReleaseDate">
+                      </span>
+                      <span *ngIf="source=='PR'">
+                        <input type="date" name="projReleaseDate" class="form-control"
+                               formControlName="projReleaseDate">
+                      </span>
+
+                    </div>
+                    <div class="col-md-3">
+                      <label>Uti%</label>
+                      <input type="text" formControlName="utilizationPercent" name="utilizationPercent" class="form-control">
+                    </div>
+                    <div class="col-md-3">
+                      <label>FinancialStaus:</label>
+                      <select class='form-control' name="financialStatus" formControlName="financialStatus">
+                        <option *ngFor='let option of masterListFinancial' [value]="option.financialStatus">
+                          {{option?.financialStatus}}
+                        </option>
+                      </select>
+                    </div>
+
+
+
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-3">
+                      <label>Status:</label>
+                      <select class='form-control' name="status" formControlName="status">
+                        <option *ngFor='let option of masterListStatus' [value]="option.status">
+                          {{option?.status}}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <label>Sub-Status:</label>
+                      <select class='form-control' name="sub_Status" formControlName="sub_Status">
+                        <option *ngFor='let option of masterListSubStatus' [value]="option.substatus">
+                          {{option?.substatus}}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <label>PowerOf3:</label>
+                      <select class='form-control' name="powerOf3" formControlName="powerOf3" (change)="onSelectedValue($event.target.value)">
+                        <option *ngFor='let option of masterListPowerOf3' [value]="option.name">
+                          {{option?.name}}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <label>Stack:</label>
+                      <select class='form-control' name="stack" formControlName="stack">
+                        <option *ngFor='let option of masterListStack' [value]="option.name">
+                          {{option?.name}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <br />
+                  <div class="row">
+                    <div class="col-md-12">
+                      <button (click)="onSave(reconciliationForm.get('items').controls[i].value,i)" class="btn btn-primary"
+                              style="float:right;">
+                        Save
+                      </button>
+
+                    </div>
+                  </div>
+
+                </div>
+              </td>
+            </tr>
+          </ng-template>
+
+        </p-table>
+
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-2" style="text-align: center">
+        <button type="submit" class="btn btn-purple mt-3" (click)="saveResource(reconciliationForm.get('items').value)"
+                [disabled]="reconciliationForm.invalid">
+          Submit
+        </button>
+      </div>
+      <div class="col-md-2" style="text-align: center">
+        <input type="button" class="btn btn-purple mt-3" value="Cancel" (click)="Cancel()">
+      </div>
+    </div>
+
+  </form>
+</div>
