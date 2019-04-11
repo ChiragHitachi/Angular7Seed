@@ -6,11 +6,6 @@ import {
   of,
   observable
 } from 'rxjs';
-
-import {
-  IProject,
-} from './projects.model';
-
 import {
   HttpClientModule,
   HttpHeaders,

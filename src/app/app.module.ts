@@ -104,12 +104,16 @@ import {
 import {
   OverlayPanelModule
 } from 'primeng/overlaypanel';
-@ NgModule({
+import { HomeComponent } from 'src/app/home/home.component';
+import { ErrorComponent } from 'src/app/core/error/error.component';
+@NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -138,4 +142,4 @@ import {
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

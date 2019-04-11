@@ -21,10 +21,7 @@ import {
 import {
   DashboardService
 } from 'src/app/dashboard/dashboard.service';
-import {
-  IResourceReconciliation
-} from '../resources.model';
-import * as moment from 'moment';
+ import * as moment from 'moment';
 import {
   MessageHandler
 } from 'src/app/core/message/message.service';
@@ -37,8 +34,8 @@ import {
 import { HomeService } from 'src/app/home/home.service';
 
 @Component({
-  selector: 'resource-reconciliation-resource',
-  templateUrl: './resource-reconciliation.component.html'
+  selector: 'eag-home',
+  templateUrl: './home.component.html'
 
 })
 export class HomeComponent implements OnInit, OnDestroy {
