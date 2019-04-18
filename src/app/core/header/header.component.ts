@@ -18,7 +18,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(private router: Router,
               private authService: AuthService,
-              private syncService: SyncService,
               private formBuilder: FormBuilder){
   }
 
@@ -26,16 +25,7 @@ export class HeaderComponent implements OnInit {
       this.authService.logout();
       this.router.navigate(['login']);
   }
-
-  refresh(){
-    if (confirm("are you sure you want to Sync Data?")) {
-      this.syncService.SyncData().subscribe((result:any)=>{
-        if(result){
-          alert('Sync Completed!');
-        }
-      })
-  }
-  }
+   
   ngOnInit() {
     this.searchForm = this.formBuilder.group({
       searchText: ['']

@@ -1,3 +1,148 @@
-<div>
-  
+<div class="container-fluid">
+  <div class="header row dashboard-container" *ngIf="listOfCount">
+ 
+    <!-- <div *ngIf="showAccount" ngClass="listOfCount.length === 5? col-md-2 :listOfCount.length === 4?col-md-3:col-md-2 "> -->
+    <div *ngIf="showAccount" class="dashboard-content" [ngClass]="showProjects ? dashboard-content-accounts : custom-class">
+      <div  class="counter selectable">
+        <div>Accounts</div>
+        <span>0 </span>
+      </div>
+    </div>
+
+    <div *ngIf="showProjects" class="dashboard-content" [ngClass]="showAccount ? dashboard-content-projects : custom-class">
+      <div   class="counter selectable">
+        <div>
+          Projects
+        </div>
+        <span>0</span>
+      </div>
+    </div>
+
+    <div class="dashboard-content dashboard-content-others">
+      <div class="counter">
+        <div>
+          A Vs B
+        </div>
+        <span *ngIf="billableNonBillableCount" [ngClass]="getBillabilityCss(billableNonBillableCount?.billable, billableNonBillableCount?.nonBillable)">
+          <a class="selectable" >{{billableNonBillableCount?.billable}}</a>
+          &nbsp;<span style="color:#6772E5"> | </span> &nbsp;
+          <a class="selectable">{{billableNonBillableCount?.nonBillable}}</a>
+        </span>
+      </div>
+    </div>
+    <div class="dashboard-content dashboard-content-others">
+      <div class="counter">
+        <div>
+          R Vs C 
+        </div>
+        <span *ngIf="revenueCostCount" [ngClass]="getRevenueCostCss(revenueCostCount?.sowAmountSum, revenueCostCount?.costAmountSum)">
+          ${{revenueCostCount?.sowAmountSum / div  | number : '1.2-2'}} &nbsp;  <span style="color:#6772E5"> | </span> &nbsp;
+          ${{revenueCostCount?.costAmountSum / div  | number : '1.2-2'}}
+        </span>
+      </div>
+    </div>
+
+    <div class="dashboard-content dashboard-content-others">
+      <div class="counter">
+        <div>
+          Power of 3
+        </div>
+        <!-- <div>
+            Digital | Consulting | Technology
+          </div> -->
+        <span>
+          <span class="summaryImg" >D</span>1
+          <span class="summaryImg"  >B</span>1
+          <span class="summaryImg">C</span> 1
+        </span>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="col-md-3 counter">
+  </div> -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 no-padding-mobile">
+        <h4 class="card-title">Billable / Non Billable Resources</h4>
+        <div class="card vehicle-details iot">
+          <div class="card-body">
+
+            <!--<eag-billable-nonbillable-chart [entityType]="entityType" [entityValue]="entityValue">
+            </eag-billable-nonbillable-chart>-->
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 no-padding-mobile">
+        <h4 class="card-title">Power of 3</h4>
+        <div class="card vehicle-details iot">
+          <div class="card-body">
+        <!--    <eag-requirement-chart [entityType]="entityType" [entityValue]="entityValue"></eag-requirement-chart>-->
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4 no-padding-mobile">
+        <h4 class="card-title">Revenue Vs Cost</h4>
+        <div class="card vehicle-details iot">
+          <div class="card-body">
+            <!-- <eag-entity-revenue-cost-chart [entityType]="entityType" [entityValue]="entityValue"></eag-entity-revenue-cost-chart> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-6 col-12 no-padding-mobile">
+        <h4 class="card-title">Upcoming Release</h4>
+        <div class="card vehicle-details upcoming-release iot">
+          <div class="card-body">
+            <!--<app-upcomingrelease></app-upcomingrelease>-->
+            <!-- put charts here -->
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-12 no-padding-mobile">
+        <h4 class="card-title">Revenue Cost Breakdown</h4>
+        <div class="card vehicle-details upcoming-release iot">
+          <div class="card-body">
+            <!--<app-upcomingrelease></app-upcomingrelease>-->
+            <!-- put charts here -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12  no-padding-mobile">
+        <h4 class="card-title">Revenue Vs Cost Breakdown</h4>
+
+        <div class="card vehicle-details upcoming-release iot">
+          <div class="card-body">
+            <!--<eag-entity-revenue-cost-chart [entityType]="entityType" [entityValue]="entityValue"></eag-entity-revenue-cost-chart>-->
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-md-12  no-padding-mobile">
+            <h4 class="card-title">Bench Report</h4>
+            <div class="">
+              <div class="card-body">
+               <eag-bench-report></eag-bench-report>
+
+
+              </div>
+            </div>
+          </div>
+    </div> -->
+  </div>
+
 </div>

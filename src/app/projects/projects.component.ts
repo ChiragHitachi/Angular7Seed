@@ -42,6 +42,11 @@ import { BreadCrumbService } from '../core/bread-crumbs/bread-crumb.service';
 export class ProjectsComponent implements OnInit {
   title = 'Projects';
   private isAlive = true;
+  listOfCount: any = { acc_count: 1, projects_count: 1 };
+  showProjects = true;
+  showAccount= true;
+  billableNonBillableCount = { billable: 1, nonBillable:0 };
+  revenueCostCount = { sowAmountSum: 1, costAmountSum: 1};
   constructor(private projectService: ProjectsService,
               private routerExtensionService: RouterExtensionService,
               private dashboardService: DashboardService,

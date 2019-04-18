@@ -106,6 +106,7 @@ import {
 } from 'primeng/overlaypanel';
 import { HomeComponent } from 'src/app/home/home.component';
 import { ErrorComponent } from 'src/app/core/error/error.component';
+import { ProjectsComponent } from 'src/app/projects/projects.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -113,7 +114,8 @@ import { ErrorComponent } from 'src/app/core/error/error.component';
     DashboardComponent,
     HeaderComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,

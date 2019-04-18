@@ -39,7 +39,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
   loginUserType = 'BU';
   isAlive: boolean = true;
   public dashboardForm: FormGroup;
-
   constructor(private formBuilder: FormBuilder,
     private commonService: CommonService,
     private dashboardService: DashboardService,
