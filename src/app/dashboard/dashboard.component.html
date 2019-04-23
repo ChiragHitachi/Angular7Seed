@@ -19,4 +19,13 @@
   </form>
 
 </div>-->
+
 <eag-projects></eag-projects>
+
+<eag-grid [data]="data" [dataKey]="projectId" [gridId]="projects" [paginator]="true">
+    <eag-grid-column header="Project"  field="name" type="string" sortable="true"></eag-grid-column>
+    <eag-grid-column header="Revenue" field="revenue" type="number"></eag-grid-column>
+    <eag-grid-column header="Cost" field="cost" type="number"></eag-grid-column>
+    <eag-grid-column header="Start Date" field="startDate" type="date"></eag-grid-column>
+    <eag-grid-column header="Cost" field="cost" type="image" url="../../assets/images/edit.png" [itemClick]="editFunction"></eag-grid-column>
+  </eag-grid>

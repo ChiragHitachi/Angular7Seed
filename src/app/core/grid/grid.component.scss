@@ -1,0 +1,17 @@
+
+@import '../../../assets/variables.scss';
+  
+  @media (max-width:550px) {
+    .mobDisplay {
+      color: $text-color-purple;
+      display:block;
+      font-weight: bold;
+      background-color: $text-bg-purple;
+      padding: 5px;
+      text-align: left;
+    }
+    
+  }
+  .mobDisplay {
+    display:none;
+  }

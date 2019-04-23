@@ -23,7 +23,7 @@
         <div>
           A Vs B
         </div>
-        <span *ngIf="billableNonBillableCount" [ngClass]="getBillabilityCss(billableNonBillableCount?.billable, billableNonBillableCount?.nonBillable)">
+        <span *ngIf="billableNonBillableCount" [ngClass]="dataBlack">
           <a class="selectable" >{{billableNonBillableCount?.billable}}</a>
           &nbsp;<span style="color:#6772E5"> | </span> &nbsp;
           <a class="selectable">{{billableNonBillableCount?.nonBillable}}</a>
@@ -35,7 +35,7 @@
         <div>
           R Vs C 
         </div>
-        <span *ngIf="revenueCostCount" [ngClass]="getRevenueCostCss(revenueCostCount?.sowAmountSum, revenueCostCount?.costAmountSum)">
+        <span *ngIf="revenueCostCount" [ngClass]="dataBlack">
           ${{revenueCostCount?.sowAmountSum / div  | number : '1.2-2'}} &nbsp;  <span style="color:#6772E5"> | </span> &nbsp;
           ${{revenueCostCount?.costAmountSum / div  | number : '1.2-2'}}
         </span>

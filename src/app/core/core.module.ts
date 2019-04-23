@@ -16,6 +16,9 @@ import { PolarAreaChartComponent } from './charts/polar-area/polar-area.componen
 import { DoughnutChartComponent } from './charts/doughnut/doughnut.component';
 import { LineChartComponent } from './charts/line/line-chart.component';
 import { DeviceDetectorModule } from 'ngx-device-detector';
+import { GridComponent } from './grid/grid.component';
+import { GridColumnDirective } from './grid/grid-column.directive';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   imports: [
@@ -23,6 +26,7 @@ import { DeviceDetectorModule } from 'ngx-device-detector';
     FormsModule,
     CommonModule,
     ToastModule,
+    TableModule,
     DeviceDetectorModule.forRoot(),
   ],
   declarations: [
@@ -33,7 +37,9 @@ import { DeviceDetectorModule } from 'ngx-device-detector';
     AuthDirective,
     PolarAreaChartComponent,
     DoughnutChartComponent,
-    LineChartComponent
+    LineChartComponent,
+    GridComponent,
+    GridColumnDirective
   ],
   exports:[
     PieChartComponent,
@@ -43,7 +49,9 @@ import { DeviceDetectorModule } from 'ngx-device-detector';
     AuthDirective,
     PolarAreaChartComponent,
     DoughnutChartComponent,
-    LineChartComponent
+    LineChartComponent,
+    GridComponent,
+    GridColumnDirective
   ],
   providers: [AuthGuard]
 })

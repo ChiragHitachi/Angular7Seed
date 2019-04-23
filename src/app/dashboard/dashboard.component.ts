@@ -37,7 +37,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
   entityList: IEntity[] = [];
   entityType: EntityType = EntityType.BusinessUnit;
   loginUserType = 'BU';
+  data: any[] = [];
   isAlive: boolean = true;
+  editFunction: Function;
   public dashboardForm: FormGroup;
   constructor(private formBuilder: FormBuilder,
     private commonService: CommonService,
@@ -49,6 +51,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.editFunction = this.edit.bind(this);
     this.commonService.SetSpinnerStatus(true);
 
     this.crumbService.InitializeWithDashboard();
@@ -56,17 +59,21 @@ export class DashboardComponent implements OnInit, OnDestroy {
       entities: [''],
       selectedEntity: ['']
     });
+    this.data.push({projectId: 1, name: 'HSBC', revenue: 100, cost: 20, startDate: new Date()});
+    this.data.push({projectId: 1, name: 'AQR', revenue: 100, cost: 20, startDate: new Date()});
+    this.data.push({projectId: 1, name: 'TransAmerica', revenue: 200.253, cost: 20, startDate: new Date()});
+    this.data.push({projectId: 1, name: 'Liberty', revenue: 300.355, cost: 20, startDate: new Date()});
+    this.data.push({projectId: 1, name: 'EverestRe', revenue: 400.998, cost: 20, startDate: new Date()});
+  }
 
-  
-
-    
+  public edit(item){
+    console.log(item);
+    alert(`clicked ${item.name}`)
   }
   getBUdata() {
-    
     this.dashboardService.getBuList()
       .pipe(takeWhile(() => this.isAlive))
       .subscribe(result => {
-      
         if (result && result.data) {
           result.data.forEach(element => {
             const entity: IEntity = {
